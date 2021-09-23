@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { rem } from "./utils/mixins";
-import { Link } from "react-router-dom";
+import { rem } from './utils/mixins';
 
-const StyledButton = styled(Link)`
+const Button = styled.button`
   display: ${props => props.type === "link" ? `inline-block` : 'auto'};
   padding: ${rem([14, 58])};
   border-radius: ${({ theme }) => rem(theme.radius.sm)};
@@ -12,6 +11,9 @@ const StyledButton = styled(Link)`
   font-weight: 500;
   font-size: ${rem(16)};
   width: max-content;
+  cursor: pointer;
+  border: none;
+  outline: none;
 `
 
-export default StyledButton;
+export default Button;

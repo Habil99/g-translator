@@ -1,10 +1,13 @@
 export { default as StyledMain } from './Margin.styled';
 export { default as Grid } from './Grid';
 export { default as StyledContainer } from './StyledContainer';
-export { default as StyledButton } from './StyledButton';
+export { default as StyledLink } from './StyledLink';
 export { default as Typography } from './Typography';
 export { default as Margin } from './Margin.styled';
 export { default as Image } from './Image.styled';
 export { default as StyledDropdown } from './Dropdown.styled';
 export { default as StyledTextArea } from './TextArea.styled';
 export { default as StyledBackdrop } from './Backdrop.styled';
+export { default as StyledRelative } from './Relative.styled';
+export { default as StyledSpinner } from './Spinner.styled';
+export { default as Button } from './Button.styled';

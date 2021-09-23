@@ -8,7 +8,7 @@ const StyledTextArea = styled.textarea`
   border-radius: ${rem(12)};
   min-height: ${rem(220)};
   resize: none;
-  padding: ${rem([15, 30])};
+  padding: ${rem([15, 45, 15, 30])};
   width: 100%;
   color: ${({ theme }) => theme.colors.dark.secondary};
   background: ${( { theme }) => theme.colors.dark.main};

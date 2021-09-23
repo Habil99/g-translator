@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import {rem} from './utils/mixins';
+import { animations} from "./utils/keyframes";
 
 const StyledDropdown = styled.div`
   position: relative;
   
   .spinner {
-    animation: loading 1s linear infinite;
+    animation: ${animations.loading} 1s linear infinite;
   }
   
   .Dropdown-root.is-open {
@@ -15,7 +16,7 @@ const StyledDropdown = styled.div`
     }
 
     .Dropdown-menu {
-      animation: fade 0.3s linear forwards;
+      animation: ${animations.fade} 0.3s linear forwards;
     }
     
     & + span {
@@ -89,27 +90,6 @@ const StyledDropdown = styled.div`
   
   .Dropdown-arrow {
     display: none;
-  }
-  
-  @keyframes fade {
-    from {
-      opacity: 0;
-      transform: scale(0.95) translateY(-5px) translateX(-4px);
-    }
-    
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes loading {
-    from {
-      transform: rotate(0deg);
-    }
-    
-    to {
-      transform: rotate(360deg);
-    }
   }
 `
 

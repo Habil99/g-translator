@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, StyledMain, StyledButton, Typography, Margin, Image} from "../../styles";
+import {Grid, StyledMain, StyledLink, Typography, Margin, Image} from "../../styles";
 import Illustration from '../../assets/svgs/illustration.svg'
 
 const Main = () => {
@@ -12,9 +12,9 @@ const Main = () => {
             <Typography.Text size="15" weight="400">
               Amet minim moult non descent ullamco est sit aliqua amet sint. Velit officia consequat duis enim velit mollit.
             </Typography.Text>
-            <StyledButton to="/translate" type="link">
+            <StyledLink to="/translate" type="link">
               Start to translate
-            </StyledButton>
+            </StyledLink>
           </Margin>
         </Grid.Col>
         <Grid.Col display="flex" justify="end" lg="12">
