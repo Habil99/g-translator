@@ -1,14 +1,15 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import Layout from "./components/Layout"
-import {Main, Translate} from './pages'
+import {routes} from './routes'
 
 const App = () => {
   return (
     <Layout>
       <Switch>
-        <Route path="/" exact component={Main}/>
-        <Route path="/translate" component={Translate}/>
+        {routes.map(({path, id, exact, component}) => (
+          <Route key={id} path={path} exact={exact || false} children={component}/>
+        ))}
       </Switch>
     </Layout>
   )

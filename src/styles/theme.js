@@ -4,7 +4,8 @@ const theme = {
     dark: {
       main: "#242731",
       primary: "#6C5DD3",
-      secondary: "#F4F4FA"
+      secondary: "#F4F4FA",
+      primaryLight: "#6C5DD30A"
     }
   },
   offset: {

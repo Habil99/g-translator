@@ -15,8 +15,8 @@ const Grid = {
     flex-direction: column;
 
     @media screen and (min-width: ${({ theme }) => rem(theme.screen.lg)}) {
-      width: calc(${props => (props.lg / 24 * 100) + "%"});
-    }
+      width: calc(${props => props.lg ? ((props.lg / 24 * 100) + "%") : '100%'});
+    } 
   `
 }
 

@@ -5,3 +5,6 @@ export { default as StyledButton } from './StyledButton';
 export { default as Typography } from './Typography';
 export { default as Margin } from './Margin.styled';
 export { default as Image } from './Image.styled';
+export { default as StyledDropdown } from './Dropdown.styled';
+export { default as StyledTextArea } from './TextArea.styled';
+export { default as StyledBackdrop } from './Backdrop.styled';
