@@ -36,6 +36,10 @@ StyledSidebar.Button = styled.button`
   span {
     margin-left: ${rem(10)};
   }
+  
+  .sidebar-text {
+    flex: 1;
+  }
 
   &:hover:not(&.active) {
     color: #8E9AFFF0;

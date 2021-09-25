@@ -1,22 +1,11 @@
-import React, {createRef, useRef} from 'react';
+import React from 'react';
 import {Grid, Margin, StyledBackdrop, StyledSidebar, StyledTooltip} from "../../styles";
 import {PatchCheckFill} from "@styled-icons/bootstrap/PatchCheckFill";
 import {PatchExclamationFill} from "@styled-icons/bootstrap";
+import {toggleTooltip, getFirstTabWithData} from "../../helpers";
+import {ChevronRight} from '@styled-icons/entypo/ChevronRight'
 
 const Sidebar = ({data, willFetch}) => {
-
-  const toggleTooltip = (event, index) => {
-    const tooltip = document.getElementById(`tooltip-${index}`)
-
-    if (tooltip) {
-      if (event.type === 'mouseover') {
-        tooltip.classList.add('show')
-      } else if (event.type === 'mouseout') {
-        tooltip.classList.remove('show')
-      }
-    }
-  }
-
   return (
     <Grid.Row>
       <Grid.Col lg={8}>
@@ -27,12 +16,16 @@ const Sidebar = ({data, willFetch}) => {
                 <StyledSidebar.Button
                   onMouseOut={e => toggleTooltip(e, index)}
                   onMouseOver={(e) => toggleTooltip(e, index)}
-                  className={`${index === 0 && 'active'}`} key={index}
+                  className={`${index === getFirstTabWithData(data, willFetch) && 'active'}`}
+                  key={index}
                 >
                   {item[willFetch].length > 0 ? (
                     <>
                       <PatchCheckFill/>
-                      <span>{item.word}</span>
+                      <span className={'sidebar-text'}>{item.word}</span>
+                      <span>
+                        <ChevronRight/>
+                      </span>
                     </>
                   ) : (
                     <>
