@@ -1,36 +1,32 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import {wordsApiService} from "../api/wordsApi";
-import axios from 'axios'
-
-const wordsApiHeaders = {
-  'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
-  'x-rapidapi-key': '905094be2amsh044b55bdb24998dp139a6cjsnddea5196e39a'
-}
-
-const baseUrl = 'https://wordsapiv1.p.rapidapi.com';
-
-const config = {
-  url: baseUrl,
-  headers: wordsApiHeaders
-}
 
 const initialState = {
   data: [],
-  status: 'idle'
+  status: 'idle',
+  notFoundedWords: [],
+  error: ''
 }
 
 export const getWordsApi = createAsyncThunk('translator/getWordsApi', async (payload) => {
-  const response = await wordsApiService(payload)
+  const {type, words} = payload;
 
-  return response.data
+  const res = await wordsApiService({type, words});
+
+  return res.data
 })
 
 const translator = createSlice({
   name: "translator",
   initialState,
-  reducers: {},
+  reducers: {
+    /*setNotFoundedWords: (state, {payload}) => {
+      state.notFoundedWords = state.notFoundedWords.concat(payload)
+    }*/
+  },
   extraReducers: builder => {
     builder.addCase(getWordsApi.fulfilled, (state, action) => {
+      console.log(action)
       state.data = action.payload;
       state.status = 'fulfilled'
     });
@@ -38,10 +34,15 @@ const translator = createSlice({
       state.status = 'loading'
     });
     builder.addCase(getWordsApi.rejected, (state, action) => {
-      console.log(action.payload);
+      state.error = action.error.message
       state.status = 'rejected'
+      console.log(action)
     })
   }
 });
+
+/*export const {
+  setNotFoundedWords
+} = translator.actions*/
 
 export default translator.reducer;

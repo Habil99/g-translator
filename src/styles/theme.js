@@ -3,6 +3,7 @@ const theme = {
   colors: {
     dark: {
       main: "#242731",
+      mainLight: "#2a3147ab",
       primary: "#6C5DD3",
       secondary: "#F4F4FA",
       primaryLight: "#6C5DD30A"

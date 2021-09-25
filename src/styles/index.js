@@ -11,3 +11,5 @@ export { default as StyledBackdrop } from './Backdrop.styled';
 export { default as StyledRelative } from './Relative.styled';
 export { default as StyledSpinner } from './Spinner.styled';
 export { default as Button } from './Button.styled';
+export { default as StyledSidebar } from './Sidebar.styled';
+export { default as StyledTooltip } from './Tooltip.styled';

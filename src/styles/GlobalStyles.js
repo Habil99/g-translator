@@ -13,6 +13,11 @@ export const GlobalStyles = createGlobalStyle`
     &:focus {
       outline: none;
     }
+    
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   };
 
   html,
