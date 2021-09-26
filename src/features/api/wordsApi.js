@@ -66,7 +66,7 @@ export const wordsApiService = async ({type, words}) => {
     data.push(response);
   }
 
-  console.log({data: mutateResponseData(data)})
+  // console.log({data: mutateResponseData(data)})
 
   return {
     data: mutateResponseData(data)

@@ -26,7 +26,6 @@ const translator = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(getWordsApi.fulfilled, (state, action) => {
-      console.log(action)
       state.data = action.payload;
       state.status = 'fulfilled'
     });
@@ -36,7 +35,6 @@ const translator = createSlice({
     builder.addCase(getWordsApi.rejected, (state, action) => {
       state.error = action.error.message
       state.status = 'rejected'
-      console.log(action)
     })
   }
 });
